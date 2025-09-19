@@ -1,25 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Project 1: Your Project Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Project 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      color: #222;
+      background: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section with background image */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 10%;
+      background: url('C:/Users/Saipreeth/Desktop/website/analytics.jpg')center/cover no-repeat;
+      position: relative;
+      color: white;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55); /* dark overlay for readability */
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+      overflow: hidden;
+      border-right: .15em solid #fff;
+      white-space: nowrap;
+      animation: typing 3s steps(30, end), blink .75s step-end infinite;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #ddd;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 2.5s;
+    }
+
+    /* Typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 10%;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Projects grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #222;
+      color: #fff;
+    }
+    a {
+      color: #00b4d8;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Project 1: Your Project Title</h1>
-    <p>Return to <a href="../index.html">Homepage</a></p>
+    <header style="height: 40vh;">
+    <h1>Project 1: [Your Project Title]</h1>
+  </header>
 
-    <h2>Problem Statement</h2>
-    <p>Briefly describe the challenge or problem you were addressing with this project.</p>
+    <section data-aos="fade-up">
+    <h2>Project Overview</h2>
+    <p>This is where you'll provide a detailed overview of your project. Talk about the problem you were solving, your goals, and the technologies you used.</p>
+  </section>
 
-    <h2>Methodology</h2>
-    <p>Explain the data sources you used, the algorithms, and the tools (e.g., Python, scikit-learn, etc.).</p>
+  <section data-aos="fade-up">
+    <h2>Methodology</h2>
+    <p>Describe the specific steps you took. For a machine learning project, you might discuss data collection, cleaning, feature engineering, model selection, training, and evaluation.</p>
+    <p>Include visualizations here, like charts or graphs. For example, a plot of your model's predictions vs. actual values.</p>
+    <img src="path/to/your-image.png" alt="A relevant chart or graph." style="max-width: 100%; height: auto; display: block; margin: 20px 0;">
+  </section>
 
-    <h2>Results and Visualizations</h2>
-    <p>Showcase your findings with text and images.</p>
-    <img src="path/to/your-visualization.png" alt="A relevant chart or graph from your project.">
+  <section data-aos="fade-up">
+    <h2>Results and Conclusion</h2>
+    <p>Summarize your key findings and the impact of your project. What did you learn? How well did your model perform? What are the next steps?</p>
+  </section>
 
-    <h2>Link to Code</h2>
-    <p>View the full code on GitHub: <a href="YOUR_GITHUB_REPO_URL">GitHub Repository</a></p>
+  <section data-aos="fade-up">
+    <h2>View the Code</h2>
+    <p>You can view the full source code for this project on my GitHub repository.</p>
+    <a href="YOUR_GITHUB_REPO_URL" target="_blank" style="padding: 10px 20px; background-color: #00b4d8; color: white; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px;">Go to GitHub</a>
+  </section>
 
+  <footer>
+    <p>
+      <a href="../index.html">Back to Home</a> | © 2025 Saipreeth Varada
+    </p>
+  </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false // allows animations to re-trigger when scrolling up
+    });
+  </script>
 </body>
 </html>
