@@ -1,0 +1,104 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  color: #222;
+  background: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section with background image */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10%;
+  background: url('images/analytics.jpg')center/cover no-repeat;
+  position: relative;
+  color: white;
+}
+header::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55); /* dark overlay for readability */
+  z-index: 1;
+}
+header h1, header p {
+  position: relative;
+  z-index: 2;
+}
+header h1 {
+  font-size: 4rem;
+  margin: 0;
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink .75s step-end 1;
+}
+header p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #ddd;
+  opacity: 0;
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  animation: typing 2s steps(20, end), blink .55s step-end 1;
+  animation-delay: 3s; /* Delay the paragraph animation so it starts after the h1 is done */
+  animation-fill-mode: forwards; /* This is key to make sure the opacity stays at 1 */
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+section {
+  padding: 80px 10%;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Projects grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #222;
+  color: #fff;
+}
+a {
+  color: #00b4d8;
+  text-decoration: none;
+}
