@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      color: #222;
+      background: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section with background image */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 10%;
+      background: url('C:/Users/Saipreeth/Desktop/website/analytics.jpg')center/cover no-repeat;
+      position: relative;
+      color: white;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55); /* dark overlay for readability */
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+      overflow: hidden;
+      border-right: .15em solid #fff;
+      white-space: nowrap;
+      animation: typing 3s steps(30, end), blink .75s step-end infinite;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #ddd;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 2.5s;
+    }
+
+    /* Typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 10%;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Projects grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #222;
+      color: #fff;
+    }
+    a {
+      color: #00b4d8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Saipreeth Varada</h1>
+    <p>Business & Data Analytics | Product Management | AI | Machine Learning | Epic |</p>
+  </header>
+
+  <section data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Insight-driven professional with expertise in product analytics, business intelligence, and AI-powered reporting. Skilled at transforming complex data into actionable insights that guide strategy, improve outcomes, and drive measurable business impact across healthcare, finance, and CRM. Recognized for blending technical expertise with strategic vision to accelerate innovation in matrixed environments.</p>
+  </section>
+  
+  <section data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <h3>Project 1</h3>
+        <p>Brief description of what you built, insights gained, or business value delivered.</p>
+        <a href="project-1/index.html">Learn More</a>
+      </div>
+      <div class="card" data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+        <h3>Project 2</h3>
+        <p>Another project highlight. Keep it concise and impact-focused.</p>
+        <a href="project-2/index.html">Learn More</a>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <h3>Project 3</h3>
+        <p>Optional: link to GitHub repo or live demo.</p>
+        <a href="project-3/index.html">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section data-aos="fade-down">
+    <h2>Contact</h2>
+    <p>Let’s connect! Email me at <a href="mailto:saipreeth.v@gmail.com">saipreeth.v@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Saipreeth Varada | Built with GitHub Pages</p>
+  </footer>
+
+  <!-- AOS Animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false // allows animations to re-trigger when scrolling up
+    });
+  </script>
+</body>
+</html>
